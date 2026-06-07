@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply h-full bg-bg-primary text-fg-primary;
+  }
+  body {
+    @apply font-sans antialiased;
+  }
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+/* 代码块语法高亮（极简） */
+.code-block {
+  @apply rounded-md border border-border bg-bg-tertiary p-3 font-mono text-sm;
+}
+.code-block pre {
+  @apply m-0 overflow-x-auto;
+  white-space: pre;
+}
+
+/* markdown 风格的轻量样式 */
+.prose-mini h1 {
+  @apply text-xl font-semibold mb-2;
+}
+.prose-mini h2 {
+  @apply text-lg font-semibold mb-2;
+}
+.prose-mini h3 {
+  @apply text-base font-semibold mb-1;
+}
+.prose-mini p {
+  @apply mb-2 leading-relaxed;
+}
+.prose-mini ul,
+.prose-mini ol {
+  @apply pl-6 mb-2;
+}
+.prose-mini ul {
+  @apply list-disc;
+}
+.prose-mini ol {
+  @apply list-decimal;
+}
+.prose-mini code:not(pre code) {
+  @apply rounded bg-bg-tertiary px-1.5 py-0.5 text-sm font-mono;
+}
+.prose-mini a {
+  @apply text-accent underline;
+}
